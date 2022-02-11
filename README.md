@@ -1,8 +1,10 @@
 ## LoadingSkeleton
-[Show a skeleton while a part of the page is loading, such that this won't result in waiting for the page to open]
+Show a skeleton while a part of the page is loading, such that this won't result in waiting for the page to open
 
 ## Features
-[feature highlights]
+- Show a 'loading skeleton' while data is being retrieved
+- Show rectangles or circles
+- Show one or many skeletons
 
 ## Usage
 [step by step instructions]
