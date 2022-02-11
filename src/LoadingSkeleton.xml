@@ -8,9 +8,50 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="dataLoaded" type="expression" required="true">
+                <caption>Data loaded</caption>
+                <description>Set to true when the data is loaded</description>
+                <returnType type="Boolean" />
+            </property>
+            <property key="contentToLoad" type="widgets" required="false">
+                <caption>Content to load.</caption>
+                <description>Widgets to place inside.</description>
+            </property>
+            <property key="skeletonShapes" type="object" isList="true" required="false">
+                <caption>Shapes</caption>
+                <description>The skeleton shapes to be shown while the content is loading</description>
+                <properties>
+                    <propertyGroup caption="Shapes">
+                        <property key="skeletonShape" type="enumeration" required="true" defaultValue="rectangle">
+                            <caption>Shape</caption>
+                            <description></description>
+                            <enumerationValues>
+                                <enumerationValue key="rectangle">Rectangle</enumerationValue>
+                                <enumerationValue key="circle">Circle</enumerationValue>
+                            </enumerationValues>
+                        </property>
+                        <property key="shapeWidth" type="integer" required="true" defaultValue="100">
+                            <caption>Width</caption>
+                            <description>Width of the shape</description>
+                        </property>
+                        <property key="shapeWidthPixels" type="boolean" required="true" defaultValue="false">
+                            <caption>Width in px</caption>
+                            <description>Set to true if the width is specified in px, false for %.</description>
+                        </property>
+                        <property key="shapeHeight" type="integer" required="true" defaultValue="100">
+                            <caption>Height</caption>
+                            <description>Height of the shape</description>
+                        </property>
+                        <property key="shapeHeightPixels" type="boolean" required="true" defaultValue="false">
+                            <caption>Height in px</caption>
+                            <description>Set to true if the height is specified in px, false for %.</description>
+                        </property>
+                         <property key="shapeClass" type="string" required="false">
+                            <caption>Class</caption>
+                            <description></description>
+                        </property>
+                    </propertyGroup>
+                </properties>
             </property>
         </propertyGroup>
     </properties>
