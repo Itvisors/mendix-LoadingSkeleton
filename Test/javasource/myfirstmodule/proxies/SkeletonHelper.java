@@ -20,7 +20,8 @@ public class SkeletonHelper
 	 */
 	public enum MemberNames
 	{
-		DataLoaded("DataLoaded");
+		DataLoaded("DataLoaded"),
+		DataLoaded2("DataLoaded2");
 
 		private java.lang.String metaName;
 
@@ -141,6 +142,42 @@ public class SkeletonHelper
 	public final void setDataLoaded(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean dataloaded)
 	{
 		getMendixObject().setValue(context, MemberNames.DataLoaded.toString(), dataloaded);
+	}
+
+	/**
+	 * @return value of DataLoaded2
+	 */
+	public final java.lang.Boolean getDataLoaded2()
+	{
+		return getDataLoaded2(getContext());
+	}
+
+	/**
+	 * @param context
+	 * @return value of DataLoaded2
+	 */
+	public final java.lang.Boolean getDataLoaded2(com.mendix.systemwideinterfaces.core.IContext context)
+	{
+		return (java.lang.Boolean) getMendixObject().getValue(context, MemberNames.DataLoaded2.toString());
+	}
+
+	/**
+	 * Set value of DataLoaded2
+	 * @param dataloaded2
+	 */
+	public final void setDataLoaded2(java.lang.Boolean dataloaded2)
+	{
+		setDataLoaded2(getContext(), dataloaded2);
+	}
+
+	/**
+	 * Set value of DataLoaded2
+	 * @param context
+	 * @param dataloaded2
+	 */
+	public final void setDataLoaded2(com.mendix.systemwideinterfaces.core.IContext context, java.lang.Boolean dataloaded2)
+	{
+		getMendixObject().setValue(context, MemberNames.DataLoaded2.toString(), dataloaded2);
 	}
 
 	/**
