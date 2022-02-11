@@ -4,7 +4,7 @@
 
 .skeletonShape {
     display: block;
-    margin: 8px;
+    margin-bottom: 16px;
     background-color: #DDD;
     animation-name: skeletonBlink;
     animation-duration: 1.7s;

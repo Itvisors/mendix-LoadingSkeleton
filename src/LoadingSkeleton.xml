@@ -38,11 +38,11 @@
                             <caption>Width in px</caption>
                             <description>Set to true if the width is specified in px, false for %.</description>
                         </property>
-                        <property key="shapeHeight" type="integer" required="true" defaultValue="100">
+                        <property key="shapeHeight" type="integer" required="true" defaultValue="38">
                             <caption>Height</caption>
                             <description>Height of the shape</description>
                         </property>
-                        <property key="shapeHeightPixels" type="boolean" required="true" defaultValue="false">
+                        <property key="shapeHeightPixels" type="boolean" required="true" defaultValue="true">
                             <caption>Height in px</caption>
                             <description>Set to true if the height is specified in px, false for %.</description>
                         </property>
