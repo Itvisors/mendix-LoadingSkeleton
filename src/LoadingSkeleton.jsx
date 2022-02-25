@@ -5,12 +5,20 @@ import "./ui/LoadingSkeleton.css";
 export class LoadingSkeleton extends Component {
     constructor(props) {
         super(props);
-        this.isInitialized = false;
+        this.state = {
+            isInitialized: false
+        };
     }
 
-    componentDidMount() {
-        // Once widget is mounted, set isInitialized to true, such that the content can be loaded
-        this.isInitialized = true;
+    componentDidUpdate() {
+        if (this.state.isInitialized === false) {
+            if (this.props.dataLoaded.status === "available") {
+                setTimeout(() => {
+                    // If the object is still hovered
+                    this.setState({ isInitialized: true });
+                }, 0);
+            }
+        }
     }
 
     /**
@@ -38,7 +46,7 @@ export class LoadingSkeleton extends Component {
         const dataLoaded = this.props.dataLoaded && this.props.dataLoaded.value;
         // Once the widget is mounted, show the content, such that flows are triggered
         let contentToShow;
-        if (this.isInitialized) {
+        if (this.state.isInitialized) {
             // If date is not yet loaded, set class such that it is not shown
             const classNameContent = dataLoaded ? "" : "skeletonContentNotVisible";
             contentToShow = <div className={classNameContent}>{this.props.contentToLoad}</div>;
