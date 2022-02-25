@@ -13,7 +13,7 @@ export class LoadingSkeleton extends Component {
     componentDidUpdate() {
         if (this.state.isInitialized === false) {
             if (this.props.dataLoaded.status === "available") {
-                // Set timeOut of 0 to make sure date the skeleton is rendered before showing the content.
+                // Set timeOut to make sure date the skeleton is rendered before showing the content.
                 setTimeout(() => {
                     this.setState({ isInitialized: true });
                 }, this.props.delay);
