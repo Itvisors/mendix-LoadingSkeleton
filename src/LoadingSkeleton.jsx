@@ -13,8 +13,8 @@ export class LoadingSkeleton extends Component {
     componentDidUpdate() {
         if (this.state.isInitialized === false) {
             if (this.props.dataLoaded.status === "available") {
+                // Set timeOut of 0 to make sure date the skeleton is rendered before showing the content.
                 setTimeout(() => {
-                    // If the object is still hovered
                     this.setState({ isInitialized: true });
                 }, 0);
             }
