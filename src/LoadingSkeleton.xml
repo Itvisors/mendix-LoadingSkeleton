@@ -53,6 +53,10 @@
                     </propertyGroup>
                 </properties>
             </property>
+            <property key="delay" type="integer" required="true" defaultValue="100">
+                <caption>Delay</caption>
+                <description>The widget does not know when it starts showing. Therefore, if the other content on your page also takes some time to load, the skeleton is triggered too late and will not be shown. A delay can be set to make sure the other content is loaded. Another option can be to put the other content also in a skeleton widget</description>
+            </property>
         </propertyGroup>
     </properties>
 </widget>

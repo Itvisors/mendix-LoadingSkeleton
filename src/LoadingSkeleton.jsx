@@ -16,7 +16,7 @@ export class LoadingSkeleton extends Component {
                 // Set timeOut of 0 to make sure date the skeleton is rendered before showing the content.
                 setTimeout(() => {
                     this.setState({ isInitialized: true });
-                }, 0);
+                }, this.props.delay);
             }
         }
     }
