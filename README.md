@@ -2,7 +2,7 @@
 Show a skeleton while a part of the page is loading, such that this won't result in waiting for the page to open
 
 ## Features
-- Show a 'loading skeleton' while data is being retrieved from e.g. an api.
+- Show a 'loading skeleton' while data is being loaded (e.g. when you use a big datasource or data is retrieved from an api).
 - Show rectangles or circles.
 - Show one or many skeletons.
 
