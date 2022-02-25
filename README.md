@@ -1,6 +1,8 @@
 ## LoadingSkeleton
 Show a skeleton while a part of the page is loading, such that this won't result in waiting for the page to open
 
+![skeleton](https://user-images.githubusercontent.com/10990959/155714524-708020f3-d4a4-4d2b-aeb8-e0b30510cde0.gif)
+
 ## Features
 - Show a 'loading skeleton' while data is being loaded (e.g. when you use a big datasource or data is retrieved from an api).
 - Show rectangles or circles.
