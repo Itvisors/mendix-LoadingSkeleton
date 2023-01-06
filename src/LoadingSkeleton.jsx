@@ -10,17 +10,6 @@ export class LoadingSkeleton extends Component {
         };
     }
 
-    componentDidUpdate() {
-        if (this.state.isInitialized === false) {
-            if (this.props.dataLoaded.status === "available") {
-                // Set timeOut to make sure date the skeleton is rendered before showing the content.
-                setTimeout(() => {
-                    this.setState({ isInitialized: true });
-                }, this.props.delay);
-            }
-        }
-    }
-
     /**
      * Render the shapes and set the correct properties
      *
@@ -50,6 +39,13 @@ export class LoadingSkeleton extends Component {
             // If date is not yet loaded, set class such that it is not shown
             const classNameContent = dataLoaded ? "" : "skeletonContentNotVisible";
             contentToShow = <div className={classNameContent}>{this.props.contentToLoad}</div>;
+        } else {
+            if (this.props.dataLoaded.status === "available") {
+                // Set timeOut to make sure date the skeleton is rendered before showing the content.
+                setTimeout(() => {
+                    this.setState({ isInitialized: true });
+                }, this.props.delay);
+            }
         }
 
         return (
