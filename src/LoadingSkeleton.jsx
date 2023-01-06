@@ -1,23 +1,19 @@
-import { Component, createElement } from "react";
+import { createElement, useState } from "react";
 
 import "./ui/LoadingSkeleton.css";
 
-export class LoadingSkeleton extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isInitialized: false
-        };
-    }
+export function LoadingSkeleton (props) {
+
+    const [isInitialized, setisInitialized] = useState(false);
 
     /**
      * Render the shapes and set the correct properties
      *
      * @returns list of skeleton shapes (divs)
      */
-    renderShapes() {
+    const renderShapes = () => {
         let key = 0;
-        return this.props.skeletonShapes.map(shape => {
+        return props.skeletonShapes.map(shape => {
             key++;
             let className = shape.shapeClass + " skeletonShape ";
             if (shape.skeletonShape === "rectangle") {
@@ -31,28 +27,26 @@ export class LoadingSkeleton extends Component {
         });
     }
 
-    render() {
-        const dataLoaded = this.props.dataLoaded && this.props.dataLoaded.value;
-        // Once the widget is mounted, show the content, such that flows are triggered
-        let contentToShow;
-        if (this.state.isInitialized) {
-            // If date is not yet loaded, set class such that it is not shown
-            const classNameContent = dataLoaded ? "" : "skeletonContentNotVisible";
-            contentToShow = <div className={classNameContent}>{this.props.contentToLoad}</div>;
-        } else {
-            if (this.props.dataLoaded.status === "available") {
-                // Set timeOut to make sure date the skeleton is rendered before showing the content.
-                setTimeout(() => {
-                    this.setState({ isInitialized: true });
-                }, this.props.delay);
-            }
+    const dataLoaded = props.dataLoaded && props.dataLoaded.value;
+    // Once the widget is mounted, show the content, such that flows are triggered
+    let contentToShow;
+    if (isInitialized) {
+        // If date is not yet loaded, set class such that it is not shown
+        const classNameContent = dataLoaded ? "" : "skeletonContentNotVisible";
+        contentToShow = <div className={classNameContent}>{props.contentToLoad}</div>;
+    } else {
+        if (props.dataLoaded.status === "available") {
+            // Set timeOut to make sure date the skeleton is rendered before showing the content.
+            setTimeout(() => {
+                setisInitialized( true );
+            }, props.delay);
         }
-
-        return (
-            <div className={this.props.class}>
-                {contentToShow}
-                {dataLoaded ? undefined : this.renderShapes()}
-            </div>
-        );
     }
+
+    return (
+        <div className={props.class}>
+            {contentToShow}
+            {dataLoaded ? undefined : renderShapes()}
+        </div>
+    );
 }
