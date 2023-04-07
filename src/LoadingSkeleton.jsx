@@ -5,6 +5,17 @@ import "./ui/LoadingSkeleton.css";
 export function LoadingSkeleton (props) {
 
     const [isInitialized, setisInitialized] = useState(false);
+    
+    /**
+     * Render the content to shown when loading data
+     */
+    const renderLoadingContent = () => {
+        if (props.useSkeletonShapes) {
+            return renderShapes();
+        } else {
+            return <div>{props.contentDuringLoad}</div>
+        }
+    }
 
     /**
      * Render the shapes and set the correct properties
@@ -46,7 +57,7 @@ export function LoadingSkeleton (props) {
     return (
         <div className={props.class}>
             {contentToShow}
-            {dataLoaded ? undefined : renderShapes()}
+            {dataLoaded ? undefined : renderLoadingContent()}
         </div>
     );
 }

@@ -17,6 +17,14 @@
                 <caption>Content to load.</caption>
                 <description>Widgets to place inside.</description>
             </property>
+            <property key="contentDuringLoad" type="widgets" required="false">
+                <caption>Show during load.</caption>
+                <description>Content to show while content is loading.</description>
+            </property>
+            <property key="useSkeletonShapes" type="boolean" required="true" defaultValue="true">
+                <caption>Use Shapes</caption>
+                <description>If set to true, you can define shapes to show when data is loading. If this does not suffice, you can create your own 'skeleton' in the second widget container.</description>
+            </property>
             <property key="skeletonShapes" type="object" isList="true" required="false">
                 <caption>Shapes</caption>
                 <description>The skeleton shapes to be shown while the content is loading</description>
