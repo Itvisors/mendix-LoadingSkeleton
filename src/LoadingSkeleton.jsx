@@ -1,21 +1,8 @@
+import "./ui/LoadingSkeleton.css";
 import { createElement, useState } from "react";
 
-import "./ui/LoadingSkeleton.css";
-
-export function LoadingSkeleton (props) {
-
+export function LoadingSkeleton(props) {
     const [isInitialized, setisInitialized] = useState(false);
-    
-    /**
-     * Render the content to shown when loading data
-     */
-    const renderLoadingContent = () => {
-        if (props.useSkeletonShapes) {
-            return renderShapes();
-        } else {
-            return <div>{props.contentDuringLoad}</div>
-        }
-    }
 
     /**
      * Render the shapes and set the correct properties
@@ -36,7 +23,18 @@ export function LoadingSkeleton (props) {
             const height = shape.shapeHeight + (shape.shapeHeightPixels ? "px" : "%");
             return <div key={key} className={className} style={{ width: width, height: height }}></div>;
         });
-    }
+    };
+
+    /**
+     * Render the content to shown when loading data
+     */
+    const renderLoadingContent = () => {
+        if (props.useSkeletonShapes) {
+            return renderShapes();
+        } else {
+            return <div>{props.contentDuringLoad}</div>;
+        }
+    };
 
     const dataLoaded = props.dataLoaded && props.dataLoaded.value;
     // Once the widget is mounted, show the content, such that flows are triggered
@@ -49,7 +47,7 @@ export function LoadingSkeleton (props) {
         if (props.dataLoaded.status === "available") {
             // Set timeOut to make sure date the skeleton is rendered before showing the content.
             setTimeout(() => {
-                setisInitialized( true );
+                setisInitialized(true);
             }, props.delay);
         }
     }

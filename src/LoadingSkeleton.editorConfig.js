@@ -1,6 +1,5 @@
 import { hidePropertyIn } from "@mendix/pluggable-widgets-tools";
 
-
 export function getProperties(values, defaultProperties) {
     // Do the values manipulation here to control the visibility of properties in Studio and Studio Pro conditionally.
     if (values.useSkeletonShapes) {
@@ -11,7 +10,6 @@ export function getProperties(values, defaultProperties) {
     return defaultProperties;
 }
 
-
 // /**
 //  * @param {Object} values
 //  * @returns {Problem[]} returns a list of problems.
@@ -20,6 +18,6 @@ export function getProperties(values, defaultProperties) {
 //    /** @type {Problem[]} */
 //    const errors = [];
 //    // Add errors to the above array to throw errors in Studio and Studio Pro.
-   
+
 //    return errors;
 // }
