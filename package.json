@@ -1,16 +1,16 @@
 {
   "name": "loadingskeleton",
   "widgetName": "LoadingSkeleton",
-  "version": "1.0.0",
+  "version": "2.2.0",
   "description": "Show a skeleton while a part of the page is loading, such that this won't result in waiting for the page to open",
   "copyright": "Aiden (2023)",
   "author": "Johan Munneke",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "license": "Apache-2.0",
   "config": {
-    "projectPath": "./Test//",
+    "projectPath": "./Test/",
     "mendixHost": "http://localhost:8080",
     "developmentPort": 3000
   },
@@ -25,9 +25,17 @@
     "release": "pluggable-widgets-tools release:web"
   },
   "devDependencies": {
-    "@mendix/pluggable-widgets-tools": "^9.18.0"
+    "@mendix/pluggable-widgets-tools": "^10.7.1"
   },
   "dependencies": {
     "classnames": "^2.2.6"
+  },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-native": "0.72.7"
+  },
+  "overrides": {
+    "react": "^18.2.0",
+    "react-native": "0.72.7"
   }
 }
